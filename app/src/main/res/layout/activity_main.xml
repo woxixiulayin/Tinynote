@@ -24,7 +24,8 @@
     <android.support.v4.widget.DrawerLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
-    <include layout="@layout/content_main"/>
+
+        <include layout="@layout/content_main" />
 
         <ListView android:id="@+id/left_drawer"
             android:layout_width="240dp"
