@@ -88,6 +88,7 @@ public class MainActivity extends AppCompatActivity implements MainActivityFragm
     public void onFragmentInteraction(Uri uri){
         getSupportFragmentManager().beginTransaction()
                 .replace(R.id.container, new NoteFragment())
+                .addToBackStack(null)
                 .commit();
     }
 }
