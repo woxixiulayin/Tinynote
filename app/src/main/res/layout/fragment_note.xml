@@ -10,10 +10,11 @@
             android:layout_width="match_parent"
             android:layout_height="50dp" />
 
-        <TextView
+        <EditText
             android:id="@+id/note_content_edit"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:gravity="top"
             android:text="@string/hello_blank_fragment" />
 
     </LinearLayout>
