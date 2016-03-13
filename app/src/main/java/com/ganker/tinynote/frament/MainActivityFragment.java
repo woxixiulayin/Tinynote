@@ -4,11 +4,15 @@ import android.app.Activity;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
 import com.ganker.tinynote.R;
+import com.ganker.tinynote.adapter.Noteadapter;
+import com.ganker.tinynote.helper.NoteLab;
 
 /**
  * A placeholder fragment containing a simple view.
@@ -16,6 +20,8 @@ import com.ganker.tinynote.R;
 public class MainActivityFragment extends Fragment {
 
     private OnFragmentInteractionListener mListener;
+    private RecyclerView noteRecycler;
+    private Noteadapter noteAdapter;
 
     public MainActivityFragment() {
     }
@@ -41,6 +47,11 @@ public class MainActivityFragment extends Fragment {
             }
         });
 
+        noteRecycler = (RecyclerView) root.findViewById(R.id.note_recycler_view);
+        noteRecycler.setLayoutManager(new LinearLayoutManager(getActivity()));
+        NoteLab notelab = NoteLab.getsNoteLab(getActivity());
+        noteAdapter = new Noteadapter(notelab.getNotes());
+        noteRecycler.setAdapter(noteAdapter);
         return root;
     }
 
